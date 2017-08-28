@@ -20,7 +20,6 @@ exports.getStores = async (req, res) => {
   // make query to get list of all stores
   // gotta be an async call to catch errors
   const stores = await Store.find();
-  console.log(stores);
   res.render('stores', { title: 'Stores', stores: stores});
 };
 
