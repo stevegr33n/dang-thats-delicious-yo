@@ -16,7 +16,7 @@ mongoose.connection.on('error', (err) => {
 // READY?! Let's go!
 require('./models/Store');
 
-// Start our app!
+// Start our app!!
 const app = require('./app');
 app.set('port', process.env.PORT || 7777);
 const server = app.listen(app.get('port'), () => {
