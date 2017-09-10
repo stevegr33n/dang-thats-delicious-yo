@@ -25,7 +25,6 @@ exports.getStores = async (req, res) => {
 
 exports.editStore = async (req, res) => {
   const store = await Store.findOne({_id: req.params.id});
-  // res.json(store)
   console.log(store)
   // find the store given the id
   // confirm they are the owner of the store
@@ -39,7 +38,7 @@ exports.updateStore = async (req, res) => {
     runValidators: true,
   }).exec();
   req.flash('success', `Sicessfully updated ${store.name}.
-  a href="/stores/${store.slug}">View Store -></a>`);
+  <a href="/stores/${store.slug}">View Store -></a>`);
   res.redirect(`/stores/${store._id}/edit`);
 }
 
